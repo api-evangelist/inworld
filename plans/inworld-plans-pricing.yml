@@ -5,7 +5,7 @@ provider: Inworld AI
 providerId: inworld
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Voice
@@ -13,29 +13,163 @@ tags:
 - Games
 - Conversational
 - Plans
-description: Placeholder plans/pricing artifact for Inworld AI. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled.
+description: >-
+  Inworld offers five plan tiers (On-Demand, Creator, Developer, Growth, Enterprise). Plans
+  are credit-based monthly subscriptions with bundled credits and tiered discounts on
+  underlying TTS, STT, and LLM Router rates.
+notes: Reconciled from Inworld's public pricing page (May 2026).
 sources:
-- https://inworld.ai/
+- https://inworld.ai/pricing
 plans:
-- id: inworld-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: inworld-on-demand
+  name: On-Demand (Free)
+  type: free
+  description: Evaluation and prototyping tier with up to 40 minutes of TTS included.
   entries:
-  - label: API Access
-    name: api_access
+  - label: Plan Fee
+    name: plan_fee
     type: flat
-    metric: varies
+    metric: month
+    limit: 1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 0 USD/month
+    userMultiplied: false
+  - label: TTS-2 / 1.5 Max
+    name: tts_max
+    type: per_unit
+    metric: characters
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1000000
+    price: 35 USD per 1M characters
+    userMultiplied: false
+  - label: TTS-1.5 Mini
+    name: tts_mini
+    type: per_unit
+    metric: characters
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1000000
+    price: 25 USD per 1M characters
+    userMultiplied: false
+  - label: Speech-to-Text
+    name: stt
+    type: per_unit
+    metric: hour
     limit: -1
     timeFrame: usage
     geo: global
     unit: 1
-    price: see https://inworld.ai/
+    price: 0.35 USD/hour
+    userMultiplied: false
+  - label: LLM Router
+    name: llm_router
+    type: passthrough
+    metric: token
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: provider cost
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: ~40 minutes TTS included
+- id: inworld-creator
+  name: Creator
+  type: subscription
+  description: Content creation tier with $25 in monthly credits.
+  entries:
+  - label: Plan Fee
+    name: plan_fee
+    type: flat
+    metric: month
+    limit: 1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 25 USD/month
+    userMultiplied: false
+  elements:
+  - name: $25 credits/month
+  - name: Up to 100 custom voices
+- id: inworld-developer
+  name: Developer
+  type: subscription
+  description: Production tier with $300 monthly credits and ~20% off rates.
+  entries:
+  - label: Plan Fee
+    name: plan_fee
+    type: flat
+    metric: month
+    limit: 1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 300 USD/month
+    userMultiplied: false
+  elements:
+  - name: $300 credits/month
+  - name: Up to 20% off rates
+- id: inworld-growth
+  name: Growth
+  type: subscription
+  description: Large deployment tier with $1,500 monthly credits and ~40% off rates.
+  entries:
+  - label: Plan Fee
+    name: plan_fee
+    type: flat
+    metric: month
+    limit: 1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 1500 USD/month
+    userMultiplied: false
+  - label: TTS-2 / 1.5 Max
+    name: tts_max
+    type: per_unit
+    metric: characters
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1000000
+    price: 25 USD per 1M characters
+    userMultiplied: false
+  - label: TTS-1.5 Mini
+    name: tts_mini
+    type: per_unit
+    metric: characters
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1000000
+    price: 15 USD per 1M characters
+    userMultiplied: false
+  elements:
+  - name: $1,500 credits/month
+  - name: Up to 40% off rates
+- id: inworld-enterprise
+  name: Enterprise
+  type: enterprise
+  description: Custom contracts starting as low as $10/1M for Realtime TTS-2 / 1.5 Max.
+  entries:
+  - label: Enterprise Contract
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: annual
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: HIPAA / BAA
+  - name: Up to 3,000 custom voices
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

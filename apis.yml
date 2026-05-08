@@ -3,7 +3,9 @@ url: https://raw.githubusercontent.com/api-evangelist/inworld/refs/heads/main/ap
 name: Inworld AI
 x-type: company
 description: >-
-  Inworld AI is a character AI platform for games and interactive media. Provides realtime APIs for AI-driven NPCs, voice, animation, and dialogue.
+  Inworld AI provides voice and conversational AI building blocks for games and interactive
+  media. Public APIs cover Text-to-Speech, Speech-to-Text, a Realtime speech-to-speech API,
+  and an LLM Router that fronts 220+ third-party models with unified billing.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI
@@ -14,10 +16,71 @@ tags:
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: inworld:tts
+    name: Inworld Text-to-Speech API
+    description: >-
+      TTS-2 and TTS-1.5 (Max/Mini) models for character voice synthesis. Priced per 1M
+      characters with plan-tier discounts.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.inworld.ai/docs/tts
+    baseURL: https://api.inworld.ai
+    tags:
+      - TTS
+      - Speech Synthesis
+      - Character Voice
+    properties:
+      - type: Documentation
+        url: https://docs.inworld.ai/docs/tts
+      - type: Pricing
+        url: https://inworld.ai/pricing
+  - aid: inworld:stt
+    name: Inworld Speech-to-Text API
+    description: >-
+      Multi-provider transcription API priced at $0.35/hour standard rate.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.inworld.ai/docs/stt
+    baseURL: https://api.inworld.ai
+    tags:
+      - STT
+      - Transcription
+    properties:
+      - type: Documentation
+        url: https://docs.inworld.ai/docs/stt
+  - aid: inworld:realtime
+    name: Inworld Realtime API
+    description: >-
+      Low-latency speech-to-speech voice API for natural conversation experiences. Included
+      with all plans.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.inworld.ai/docs/realtime
+    baseURL: https://api.inworld.ai
+    tags:
+      - Realtime
+      - Speech-to-Speech
+      - Voice
+    properties:
+      - type: Documentation
+        url: https://docs.inworld.ai/docs/realtime
+  - aid: inworld:llm-router
+    name: Inworld LLM Router API
+    description: >-
+      Routing layer over 220+ LLM models, billed at provider cost via Inworld's unified API.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.inworld.ai/docs/llm-router
+    baseURL: https://api.inworld.ai
+    tags:
+      - LLM
+      - Router
+      - Inference
+    properties:
+      - type: Documentation
+        url: https://docs.inworld.ai/docs/llm-router
 common:
   - type: Website
     url: https://inworld.ai/
+  - type: Documentation
+    url: https://docs.inworld.ai/
   - type: Plans
     url: plans/inworld-plans-pricing.yml
   - type: RateLimits

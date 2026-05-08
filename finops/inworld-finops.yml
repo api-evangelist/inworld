@@ -5,7 +5,7 @@ provider: Inworld AI
 providerId: inworld
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Voice
@@ -15,10 +15,14 @@ tags:
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Inworld AI. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps view of Inworld AI. Inworld combines a credit-based monthly
+  subscription with usage-based meters across TTS (per 1M characters), STT (per hour), and
+  LLM Router (provider passthrough). Higher tiers unlock 20-40% off rates.
+notes: Plan tier sizing materially affects unit costs across all four products.
 sources:
-- https://inworld.ai/
+- https://inworld.ai/pricing
+- https://docs.inworld.ai/
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -29,7 +33,7 @@ alignedWith:
 publisherName: Inworld AI
 serviceCategory: AI
 billingModel:
-  pricingCategory: To Be Reconciled
+  pricingCategory: Subscription + Usage
   billingFrequency: Monthly
   billingCurrency: USD
   chargeCategories:
@@ -37,7 +41,7 @@ billingModel:
   - Purchase
   - Adjustment
 focusColumns:
-  ServiceName: Inworld AI
+  ServiceName: Inworld AI Voice and Conversational AI
   ServiceCategory: AI
   ProviderName: Inworld AI
   PublisherName: Inworld AI
@@ -45,22 +49,48 @@ focusColumns:
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: tts_characters
+  description: TTS character usage priced per 1M characters with tier-based discounts.
+  unit: character
   aggregation: sum
   dimensions:
   - account
-  - resource
+  - voice_model
+- name: stt_hours
+  description: Speech-to-Text hour usage at $0.35/hour standard.
+  unit: hour
+  aggregation: sum
+  dimensions:
+  - account
+- name: realtime_minutes
+  description: Realtime API speech-to-speech included with all plans.
+  unit: minute
+  aggregation: sum
+  dimensions:
+  - account
+- name: llm_router_tokens
+  description: LLM Router pass-through token usage at provider cost.
+  unit: token
+  aggregation: sum
+  dimensions:
+  - account
+  - provider_model
+- name: monthly_credits
+  description: Monthly credit allocation tied to plan tier.
+  unit: USD
+  aggregation: sum
+  dimensions:
+  - account
+  - plan
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Track credit burn and per-meter usage in Inworld dashboard.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Tag voices and game/title workloads to attribute usage.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Move to higher tiers when projected burn unlocks 20-40% rate discounts; choose TTS-1.5 Mini where quality permits.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Assign a credit budget owner per game/title.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

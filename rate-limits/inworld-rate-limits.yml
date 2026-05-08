@@ -5,7 +5,7 @@ provider: Inworld AI
 providerId: inworld
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: partial
 tags:
 - AI
 - Voice
@@ -15,21 +15,39 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Inworld AI. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Inworld throttles primarily through plan-tier credit budgets and per-tier feature gates
+  (custom voices, workspace sharing). Specific HTTP RPS limits are not publicly documented.
+notes: Plan tier credit balance is the primary scaling lever; HTTP RPS limits are not public.
 sources:
-- https://inworld.ai/
+- https://inworld.ai/pricing
+- https://docs.inworld.ai/
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: TTS Free Inclusion (On-Demand)
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: minutes
+  limit: 40
+  notes: ~40 minutes of TTS included on free tier.
+- name: Custom Voices (Creator)
+  scope: account
+  metric: custom_voices
+  limit: 100
+- name: Custom Voices (Enterprise)
+  scope: account
+  metric: custom_voices
+  limit: 3000
+- name: HTTP Requests
+  scope: account
+  metric: requests
+  limit: not publicly documented
+  notes: Verify with Inworld support; standard 429 backoff applies.
 policies:
 - name: Backoff Strategy
   description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+- name: Credit Monitoring
+  description: Track credit burn against plan allocation and upgrade tier when approaching cap.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
