@@ -1,0 +1,29 @@
+aid: inworld
+url: https://raw.githubusercontent.com/api-evangelist/inworld/refs/heads/main/apis.yml
+name: Inworld AI
+x-type: company
+description: >-
+  Inworld AI is a character AI platform for games and interactive media. Provides realtime APIs for AI-driven NPCs, voice, animation, and dialogue.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - AI
+  - Voice
+  - Characters
+  - Games
+  - Conversational
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://inworld.ai/
+  - type: Plans
+    url: plans/inworld-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/inworld-rate-limits.yml
+  - type: FinOps
+    url: finops/inworld-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
