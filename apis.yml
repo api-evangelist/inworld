@@ -1,7 +1,7 @@
 aid: inworld
 url: https://raw.githubusercontent.com/api-evangelist/inworld/refs/heads/main/apis.yml
 name: Inworld AI
-x-type: company
+kind: company
 description: >-
   Inworld AI provides voice and conversational AI building blocks for games and interactive
   media. Public APIs cover Text-to-Speech, Speech-to-Text, a Realtime speech-to-speech API,
