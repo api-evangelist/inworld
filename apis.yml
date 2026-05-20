@@ -77,6 +77,10 @@ apis:
       - type: Documentation
         url: https://docs.inworld.ai/docs/llm-router
 common:
+  - type: GitHubOrganization
+    url: https://github.com/inworld-ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/inworld-ai
   - type: Website
     url: https://inworld.ai/
   - type: Documentation
