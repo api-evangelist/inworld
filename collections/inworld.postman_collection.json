@@ -1,0 +1,2092 @@
+{
+  "item": [
+    {
+      "id": "5da73b52-9f40-4d51-9418-857616c6e8e9",
+      "name": "TTS",
+      "description": {
+        "content": "Text-to-Speech synthesis",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3079d4ec-a25c-4dee-bbfe-116dccaac22a",
+          "name": "Synthesize speech",
+          "request": {
+            "name": "Synthesize speech",
+            "description": {
+              "content": "Send text to the TTS REST API and receive a complete audio file in one response.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "tts",
+                "synthesize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"<string>\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"<string>\",\n    \"sampleRateHertz\": \"<integer>\",\n    \"speakingRate\": \"<number>\",\n    \"bitRate\": 128000\n  },\n  \"language\": \"<string>\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f8734ab3-138c-414a-9866-7e03166a5e9b",
+              "name": "Synthesized audio",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tts",
+                    "synthesize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"inworld-tts-2\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"OGG_OPUS\",\n    \"sampleRateHertz\": 22674,\n    \"speakingRate\": 0.5026949764080982,\n    \"bitRate\": 128000\n  },\n  \"language\": \"en-US\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"audioContent\": \"string\",\n  \"usage\": {\n    \"characterCount\": 7537,\n    \"modelId\": \"string\"\n  },\n  \"timestampInfo\": [\n    {\n      \"text\": \"string\",\n      \"startSeconds\": 1839.6844812458492,\n      \"endSeconds\": 4349.313921553186,\n      \"phonemes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"text\": \"string\",\n      \"startSeconds\": 8772.721710694866,\n      \"endSeconds\": 5670.847802990392,\n      \"phonemes\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "66cd916a-239b-4e9e-8ea7-78e3c3f534b1",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tts",
+                    "synthesize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"inworld-tts-2\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"OGG_OPUS\",\n    \"sampleRateHertz\": 22674,\n    \"speakingRate\": 0.5026949764080982,\n    \"bitRate\": 128000\n  },\n  \"language\": \"en-US\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4104,\n  \"message\": \"string\",\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dabc1738-ed58-4d36-b7d0-8e74c1a7b79a",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tts",
+                    "synthesize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"inworld-tts-2\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"OGG_OPUS\",\n    \"sampleRateHertz\": 22674,\n    \"speakingRate\": 0.5026949764080982,\n    \"bitRate\": 128000\n  },\n  \"language\": \"en-US\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4104,\n  \"message\": \"string\",\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "132428a2-fa0b-426e-a057-e4db3bfe4499",
+          "name": "Synthesize speech (streaming)",
+          "request": {
+            "name": "Synthesize speech (streaming)",
+            "description": {
+              "content": "Stream synthesized audio chunks over HTTP as they are processed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "tts",
+                "synthesize:stream"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/x-ndjson"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"<string>\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"<string>\",\n    \"sampleRateHertz\": \"<integer>\",\n    \"speakingRate\": \"<number>\",\n    \"bitRate\": 128000\n  },\n  \"language\": \"<string>\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f714b8fa-5a44-416d-a561-0ffb64bde726",
+              "name": "Streamed audio chunks (newline-delimited JSON)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tts",
+                    "synthesize:stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/x-ndjson"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"inworld-tts-2\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"OGG_OPUS\",\n    \"sampleRateHertz\": 22674,\n    \"speakingRate\": 0.5026949764080982,\n    \"bitRate\": 128000\n  },\n  \"language\": \"en-US\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-ndjson"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c97edeee-202a-422d-95da-b514333e57cb",
+          "name": "List available TTS voices",
+          "request": {
+            "name": "List available TTS voices",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "tts",
+                "voices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f6108c8a-ebc1-4742-a704-d91213db68ba",
+              "name": "A list of TTS voices",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tts",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"voices\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"language\": \"string\",\n      \"gender\": \"string\",\n      \"description\": \"string\",\n      \"previewUrl\": \"http://JhBvTOmUGRJNamfmmrBpfgPI.ptyCoTU6WbIWS3IzOPPFPHymSIGerwt.zi45qIak1hl,3\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"language\": \"string\",\n      \"gender\": \"string\",\n      \"description\": \"string\",\n      \"previewUrl\": \"http://GCimyBsWxjRHwLLKxepLaav.ukUe2IrKVCP3eYnxAMpvUUDHKPasW15FB9niEnuVLrupRfGsN8jLN4LX36Sfsaij5-as06Cjau\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a26f6e8f-1279-4830-90f8-7eea9629440b",
+      "name": "Voices",
+      "description": {
+        "content": "Voice catalog and custom voice management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a1bc9130-fff4-450d-98d3-27f1cf8b4ceb",
+          "name": "List available TTS voices",
+          "request": {
+            "name": "List available TTS voices",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "tts",
+                "voices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "716012ac-3271-4bea-b43d-3d3eb7c14f8f",
+              "name": "A list of TTS voices",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tts",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"voices\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"language\": \"string\",\n      \"gender\": \"string\",\n      \"description\": \"string\",\n      \"previewUrl\": \"http://SxrhnfCUSJVZHKoEPgwZA.awpwx3Fx9a6-Cu6uaRwgzfZoVOiyoggr\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"language\": \"string\",\n      \"gender\": \"string\",\n      \"description\": \"string\",\n      \"previewUrl\": \"http://BWO.axlgM6+v3rqvFZpu.nq+kwlt5St.ftlxxQ1.u9-t.wco+snO\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3838af8c-6a1a-45b4-b99c-bd3a445f2e66",
+          "name": "List voices",
+          "request": {
+            "name": "List voices",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "voices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ddcbe9d8-65d3-4c50-b192-6c4914966b75",
+              "name": "Voice list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"voices\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"language\": \"string\",\n      \"gender\": \"string\",\n      \"description\": \"string\",\n      \"previewUrl\": \"http://SxrhnfCUSJVZHKoEPgwZA.awpwx3Fx9a6-Cu6uaRwgzfZoVOiyoggr\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"language\": \"string\",\n      \"gender\": \"string\",\n      \"description\": \"string\",\n      \"previewUrl\": \"http://BWO.axlgM6+v3rqvFZpu.nq+kwlt5St.ftlxxQ1.u9-t.wco+snO\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02ba314c-4336-4250-a4d7-9564cdaa8f9f",
+          "name": "Get voice",
+          "request": {
+            "name": "Get voice",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "voices",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4c64f7b9-7974-4dda-b8d3-2f00b26306a4",
+              "name": "Voice details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"language\": \"string\",\n  \"gender\": \"string\",\n  \"description\": \"string\",\n  \"previewUrl\": \"https://NISTpOuvhVYLib.hjoqDUps7g3EfTAPG6wwA3iJCE5OuG\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65d9937f-b39b-4640-aafa-2da9408b2a6b",
+          "name": "Update voice",
+          "request": {
+            "name": "Update voice",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "voices",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"language\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"description\": \"<string>\",\n  \"previewUrl\": \"<uri>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d1eb5936-44da-4a1e-bd0b-0774420837c4",
+              "name": "Updated voice",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"language\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"description\": \"<string>\",\n  \"previewUrl\": \"<uri>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"language\": \"string\",\n  \"gender\": \"string\",\n  \"description\": \"string\",\n  \"previewUrl\": \"https://NISTpOuvhVYLib.hjoqDUps7g3EfTAPG6wwA3iJCE5OuG\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c4845e32-dc5e-4d48-a48e-9cb8f5c45d9b",
+          "name": "Delete voice",
+          "request": {
+            "name": "Delete voice",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "voices",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "600a6d23-2b62-4e81-998e-95e6ddc37f40",
+              "name": "Voice deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c31dc6cb-674b-48f9-a4a1-9f516ed9fdef",
+          "name": "Clone voice from audio",
+          "request": {
+            "name": "Clone voice from audio",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "voices",
+                "clone"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"audioSample\": \"<byte>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6d5d0765-c13d-4de5-bcbc-6014165e055f",
+              "name": "Cloned voice",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voices",
+                    "clone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"audioSample\": \"<byte>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"language\": \"string\",\n  \"gender\": \"string\",\n  \"description\": \"string\",\n  \"previewUrl\": \"https://NISTpOuvhVYLib.hjoqDUps7g3EfTAPG6wwA3iJCE5OuG\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f3bb2ace-2b29-4f79-b2ce-3c99ebbffbdf",
+          "name": "Design voice from text description",
+          "request": {
+            "name": "Design voice from text description",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "voices",
+                "design"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b8479dfd-c7ba-4c9e-ad6a-80ec351dc539",
+              "name": "Designed voice",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voices",
+                    "design"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"language\": \"string\",\n  \"gender\": \"string\",\n  \"description\": \"string\",\n  \"previewUrl\": \"https://NISTpOuvhVYLib.hjoqDUps7g3EfTAPG6wwA3iJCE5OuG\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86b7c58f-c88d-470d-8855-2ed3c161e28a",
+          "name": "Publish a voice",
+          "request": {
+            "name": "Publish a voice",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "voices",
+                "publish"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"voiceId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c8116117-f3d5-46ce-ae40-fb38d43463bd",
+              "name": "Voice published",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "voices",
+                    "publish"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"voiceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "04bf7fe6-1b5b-4ebc-93c3-62e7ebad1d22",
+      "name": "STT",
+      "description": {
+        "content": "Speech-to-Text transcription",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "085f1d95-8056-4f09-ad45-1605ccdb0969",
+          "name": "Transcribe audio",
+          "request": {
+            "name": "Transcribe audio",
+            "description": {
+              "content": "Transcribe audio to text with Inworld's Realtime STT API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "stt",
+                "transcribe"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"audioContent\": \"<byte>\",\n  \"language\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1f147706-1e8a-4f3a-b6e0-8c2ab5aba722",
+              "name": "Transcription result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "stt",
+                    "transcribe"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"audioContent\": \"<byte>\",\n  \"language\": \"en-US\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transcript\": \"string\",\n  \"language\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "87464275-7a1f-4214-90c9-d3025a98be82",
+      "name": "Realtime",
+      "description": {
+        "content": "Realtime speech-to-speech",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bc0f0a7d-4393-4b07-8b10-b40e417eda73",
+          "name": "Create WebRTC connection",
+          "request": {
+            "name": "Create WebRTC connection",
+            "description": {
+              "content": "Create a WebRTC session for realtime voice agent interaction.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "realtime",
+                "webrtc"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sdp\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2266f69e-e47a-4d8e-8950-765a06bd67a9",
+              "name": "WebRTC session details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "realtime",
+                    "webrtc"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sdp\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"answer\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "072c85a9-d184-44f2-9f44-f6a6454c0b88",
+      "name": "Router",
+      "description": {
+        "content": "LLM Router configurations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ff579dec-c0b9-45f5-93ee-630a4551a1d9",
+          "name": "List routers",
+          "request": {
+            "name": "List routers",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "routers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2cdbcd1-3f1d-4d3f-82e5-3cc215a70674",
+              "name": "List of router configurations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "routers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"routers\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"rules\": [\n        {\n          \"model\": \"string\",\n          \"weight\": 5847.42965075859,\n          \"conditions\": {}\n        },\n        {\n          \"model\": \"string\",\n          \"weight\": 6387.492161884701,\n          \"conditions\": {}\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"rules\": [\n        {\n          \"model\": \"string\",\n          \"weight\": 4759.2370831903945,\n          \"conditions\": {}\n        },\n        {\n          \"model\": \"string\",\n          \"weight\": 652.3273659295726,\n          \"conditions\": {}\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3c9af21c-141c-4010-8664-20d335457845",
+          "name": "Create router",
+          "request": {
+            "name": "Create router",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "routers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    },\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ec07153a-db84-4b9f-b5f3-362423dcd8a5",
+              "name": "Router created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "routers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    },\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"rules\": [\n    {\n      \"model\": \"string\",\n      \"weight\": 3262.7502253541397,\n      \"conditions\": {}\n    },\n    {\n      \"model\": \"string\",\n      \"weight\": 2438.9200829743154,\n      \"conditions\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ab86fdd0-a30d-4bca-8551-8c1418e22671",
+          "name": "Get router",
+          "request": {
+            "name": "Get router",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "routers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "409fec2c-385c-4119-9f37-d4123b3afde6",
+              "name": "Router configuration",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "routers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"rules\": [\n    {\n      \"model\": \"string\",\n      \"weight\": 3262.7502253541397,\n      \"conditions\": {}\n    },\n    {\n      \"model\": \"string\",\n      \"weight\": 2438.9200829743154,\n      \"conditions\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27d43b0a-d9d4-43d5-a013-a86859ba34cd",
+          "name": "Update router",
+          "request": {
+            "name": "Update router",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "routers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    },\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5fc45376-7c64-4893-a132-c1efa3ec9b11",
+              "name": "Updated router",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "routers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    },\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"rules\": [\n    {\n      \"model\": \"string\",\n      \"weight\": 3262.7502253541397,\n      \"conditions\": {}\n    },\n    {\n      \"model\": \"string\",\n      \"weight\": 2438.9200829743154,\n      \"conditions\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "00d3d2a5-41e0-4d33-a62b-b0aa1a10b658",
+          "name": "Delete router",
+          "request": {
+            "name": "Delete router",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "routers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4508b44c-a272-429a-980b-b9a244b34103",
+              "name": "Router deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "routers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "01a908b2-c0ff-4aab-b450-9b12624e0269",
+          "name": "Create chat completion (OpenAI-compatible)",
+          "request": {
+            "name": "Create chat completion (OpenAI-compatible)",
+            "description": {
+              "content": "Route chat completion requests via the LLM Router.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"stream\": \"<boolean>\",\n  \"temperature\": \"<number>\",\n  \"max_tokens\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "74d6c39e-410f-4c7c-b606-b851ddd10577",
+              "name": "Chat completion response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"stream\": \"<boolean>\",\n  \"temperature\": \"<number>\",\n  \"max_tokens\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b994c8cd-e6df-4fc0-bf6d-00ef7af07fd1",
+      "name": "Models",
+      "description": {
+        "content": "Available models",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "64b2d3ff-8bb4-418b-8fb0-9bfd540e970b",
+          "name": "List available models",
+          "request": {
+            "name": "List available models",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "367eab78-7ddb-4ad2-b36c-707ba5d14e8d",
+              "name": "List of models",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"provider\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"provider\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.inworld.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cc5a51fe-1fe0-4d34-b955-983b125d494b",
+    "name": "Inworld AI API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Inworld AI's voice and conversational AI platform, covering\nText-to-Speech (synchronous and streaming), Speech-to-Text, voice\nmanagement, models, and the LLM Router that fronts 220+ third-party\nmodels via the OpenAI-compatible chat completions endpoint.\n\n\nContact Support:\n Name: Inworld AI",
+      "type": "text/plain"
+    }
+  }
+}
