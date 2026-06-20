@@ -6,7 +6,7 @@ description: >-
   Inworld AI provides voice and conversational AI building blocks for games and interactive
   media. Public APIs cover Text-to-Speech, Speech-to-Text, a Realtime speech-to-speech API,
   and an LLM Router that fronts 220+ third-party models with unified billing.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - Voice
@@ -22,7 +22,7 @@ apis:
     description: >-
       TTS-2 and TTS-1.5 (Max/Mini) models for character voice synthesis. Priced per 1M
       characters with plan-tier discounts.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.inworld.ai/docs/tts
     baseURL: https://api.inworld.ai
     tags:
@@ -38,7 +38,7 @@ apis:
     name: Inworld Speech-to-Text API
     description: >-
       Multi-provider transcription API priced at $0.35/hour standard rate.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.inworld.ai/docs/stt
     baseURL: https://api.inworld.ai
     tags:
@@ -52,7 +52,7 @@ apis:
     description: >-
       Low-latency speech-to-speech voice API for natural conversation experiences. Included
       with all plans.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.inworld.ai/docs/realtime
     baseURL: https://api.inworld.ai
     tags:
@@ -66,7 +66,7 @@ apis:
     name: Inworld LLM Router API
     description: >-
       Routing layer over 220+ LLM models, billed at provider cost via Inworld's unified API.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.inworld.ai/docs/llm-router
     baseURL: https://api.inworld.ai
     tags:
