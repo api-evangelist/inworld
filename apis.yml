@@ -91,7 +91,7 @@ common:
     url: rate-limits/inworld-rate-limits.yml
   - type: FinOps
     url: finops/inworld-finops.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.inworld.ai/llms.txt
 maintainers:
   - FN: Kin Lane
