@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/inworld-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: |-
+    Authentication uses HTTP Basic with the API key as the username
+    (password empty), encoded as: `Authorization: Basic base64(apiKey:)`.
+    Get an API key at https://platform.inworld.ai.
+  sources:
+  - openapi/inworld-openapi.yml

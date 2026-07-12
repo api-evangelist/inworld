@@ -77,6 +77,12 @@ apis:
       - type: Documentation
         url: https://docs.inworld.ai/docs/llm-router
 common:
+  - type: TrustCenter
+    url: security/inworld-trust-center.yml
+  - type: DomainSecurity
+    url: security/inworld-domain-security.yml
+  - type: Authentication
+    url: authentication/inworld-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/inworld-ai
   - type: LinkedIn
