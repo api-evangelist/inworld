@@ -1,0 +1,233 @@
+openapi: 3.1.0
+info:
+  title: Inworld AI Models TTS API
+  description: 'REST API for Inworld AI''s voice and conversational AI platform, covering
+
+    Text-to-Speech (synchronous and streaming), Speech-to-Text, voice
+
+    management, models, and the LLM Router that fronts 220+ third-party
+
+    models via the OpenAI-compatible chat completions endpoint.
+
+    '
+  version: '1.0'
+  contact:
+    name: Inworld AI
+    url: https://docs.inworld.ai
+servers:
+- url: https://api.inworld.ai
+  description: Production API
+security:
+- basicAuth: []
+tags:
+- name: TTS
+  description: Text-to-Speech synthesis
+paths:
+  /v1/tts/synthesize:
+    post:
+      tags:
+      - TTS
+      summary: Synthesize speech
+      description: Send text to the TTS REST API and receive a complete audio file in one response.
+      operationId: synthesizeSpeech
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SynthesizeRequest'
+      responses:
+        '200':
+          description: Synthesized audio
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SynthesizeResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /v1/tts/synthesize:stream:
+    post:
+      tags:
+      - TTS
+      summary: Synthesize speech (streaming)
+      description: Stream synthesized audio chunks over HTTP as they are processed.
+      operationId: synthesizeSpeechStream
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SynthesizeRequest'
+      responses:
+        '200':
+          description: Streamed audio chunks (newline-delimited JSON)
+          content:
+            application/x-ndjson:
+              schema:
+                $ref: '#/components/schemas/SynthesizeResponse'
+  /v1/tts/voices:
+    get:
+      tags:
+      - TTS
+      summary: List available TTS voices
+      operationId: listTtsVoices
+      responses:
+        '200':
+          description: A list of TTS voices
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  voices:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Voice'
+components:
+  responses:
+    Unauthorized:
+      description: Missing or invalid API key
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    AudioConfig:
+      type: object
+      properties:
+        audioEncoding:
+          type: string
+          enum:
+          - LINEAR16
+          - MP3
+          - OGG_OPUS
+          - ALAW
+          - MULAW
+          - FLAC
+          - PCM
+          - WAV
+        sampleRateHertz:
+          type: integer
+          minimum: 8000
+          maximum: 48000
+        speakingRate:
+          type: number
+          minimum: 0.5
+          maximum: 1.5
+        bitRate:
+          type: integer
+          default: 128000
+    SynthesizeResponse:
+      type: object
+      properties:
+        audioContent:
+          type: string
+          format: byte
+          description: Base64-encoded audio bytes in the requested format.
+        usage:
+          type: object
+          properties:
+            characterCount:
+              type: integer
+            modelId:
+              type: string
+        timestampInfo:
+          type: array
+          items:
+            type: object
+            properties:
+              text:
+                type: string
+              startSeconds:
+                type: number
+              endSeconds:
+                type: number
+              phonemes:
+                type: array
+                items:
+                  type: string
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        status:
+          type: string
+    Voice:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        language:
+          type: string
+        gender:
+          type: string
+        description:
+          type: string
+        previewUrl:
+          type: string
+          format: uri
+    SynthesizeRequest:
+      type: object
+      required:
+      - text
+      - voiceId
+      - modelId
+      properties:
+        text:
+          type: string
+          maxLength: 2000
+          description: Input string to convert to speech.
+        voiceId:
+          type: string
+          description: Identifier for the desired voice.
+        modelId:
+          type: string
+          example: inworld-tts-2
+          description: TTS model selection (e.g., inworld-tts-2, inworld-tts-1.5-mini).
+        audioConfig:
+          $ref: '#/components/schemas/AudioConfig'
+        language:
+          type: string
+          example: en-US
+          description: BCP-47 language tag.
+        deliveryMode:
+          type: string
+          enum:
+          - STABLE
+          - BALANCED
+          - CREATIVE
+          description: Output variation control (TTS-2 only).
+        timestampType:
+          type: string
+          enum:
+          - WORD
+          - CHARACTER
+        applyTextNormalization:
+          type: string
+          enum:
+          - true
+          - false
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Authentication uses HTTP Basic with the API key as the username
+
+        (password empty), encoded as: `Authorization: Basic base64(apiKey:)`.
+
+        Get an API key at https://platform.inworld.ai.
+
+        '

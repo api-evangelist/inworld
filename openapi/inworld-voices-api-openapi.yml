@@ -1,0 +1,208 @@
+openapi: 3.1.0
+info:
+  title: Inworld AI Models Voices API
+  description: 'REST API for Inworld AI''s voice and conversational AI platform, covering
+
+    Text-to-Speech (synchronous and streaming), Speech-to-Text, voice
+
+    management, models, and the LLM Router that fronts 220+ third-party
+
+    models via the OpenAI-compatible chat completions endpoint.
+
+    '
+  version: '1.0'
+  contact:
+    name: Inworld AI
+    url: https://docs.inworld.ai
+servers:
+- url: https://api.inworld.ai
+  description: Production API
+security:
+- basicAuth: []
+tags:
+- name: Voices
+  description: Voice catalog and custom voice management
+paths:
+  /v1/tts/voices:
+    get:
+      tags:
+      - Voices
+      summary: List available TTS voices
+      operationId: listTtsVoices
+      responses:
+        '200':
+          description: A list of TTS voices
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  voices:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Voice'
+  /v1/voices:
+    get:
+      tags:
+      - Voices
+      summary: List voices
+      operationId: listVoices
+      responses:
+        '200':
+          description: Voice list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  voices:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Voice'
+  /v1/voices/{id}:
+    get:
+      tags:
+      - Voices
+      summary: Get voice
+      operationId: getVoice
+      parameters:
+      - $ref: '#/components/parameters/VoiceId'
+      responses:
+        '200':
+          description: Voice details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Voice'
+    patch:
+      tags:
+      - Voices
+      summary: Update voice
+      operationId: updateVoice
+      parameters:
+      - $ref: '#/components/parameters/VoiceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Voice'
+      responses:
+        '200':
+          description: Updated voice
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Voice'
+    delete:
+      tags:
+      - Voices
+      summary: Delete voice
+      operationId: deleteVoice
+      parameters:
+      - $ref: '#/components/parameters/VoiceId'
+      responses:
+        '204':
+          description: Voice deleted
+  /v1/voices/clone:
+    post:
+      tags:
+      - Voices
+      summary: Clone voice from audio
+      operationId: cloneVoice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                audioSample:
+                  type: string
+                  format: byte
+                  description: Base64-encoded audio sample
+      responses:
+        '200':
+          description: Cloned voice
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Voice'
+  /v1/voices/design:
+    post:
+      tags:
+      - Voices
+      summary: Design voice from text description
+      operationId: designVoice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+      responses:
+        '200':
+          description: Designed voice
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Voice'
+  /v1/voices/publish:
+    post:
+      tags:
+      - Voices
+      summary: Publish a voice
+      operationId: publishVoice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                voiceId:
+                  type: string
+      responses:
+        '200':
+          description: Voice published
+components:
+  parameters:
+    VoiceId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    Voice:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        language:
+          type: string
+        gender:
+          type: string
+        description:
+          type: string
+        previewUrl:
+          type: string
+          format: uri
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Authentication uses HTTP Basic with the API key as the username
+
+        (password empty), encoded as: `Authorization: Basic base64(apiKey:)`.
+
+        Get an API key at https://platform.inworld.ai.
+
+        '

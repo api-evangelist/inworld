@@ -1,0 +1,189 @@
+openapi: 3.1.0
+info:
+  title: Inworld AI Models Router API
+  description: 'REST API for Inworld AI''s voice and conversational AI platform, covering
+
+    Text-to-Speech (synchronous and streaming), Speech-to-Text, voice
+
+    management, models, and the LLM Router that fronts 220+ third-party
+
+    models via the OpenAI-compatible chat completions endpoint.
+
+    '
+  version: '1.0'
+  contact:
+    name: Inworld AI
+    url: https://docs.inworld.ai
+servers:
+- url: https://api.inworld.ai
+  description: Production API
+security:
+- basicAuth: []
+tags:
+- name: Router
+  description: LLM Router configurations
+paths:
+  /v1/routers:
+    get:
+      tags:
+      - Router
+      summary: List routers
+      operationId: listRouters
+      responses:
+        '200':
+          description: List of router configurations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  routers:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Router'
+    post:
+      tags:
+      - Router
+      summary: Create router
+      operationId: createRouter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Router'
+      responses:
+        '201':
+          description: Router created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Router'
+  /v1/routers/{id}:
+    get:
+      tags:
+      - Router
+      summary: Get router
+      operationId: getRouter
+      parameters:
+      - $ref: '#/components/parameters/RouterId'
+      responses:
+        '200':
+          description: Router configuration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Router'
+    patch:
+      tags:
+      - Router
+      summary: Update router
+      operationId: updateRouter
+      parameters:
+      - $ref: '#/components/parameters/RouterId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Router'
+      responses:
+        '200':
+          description: Updated router
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Router'
+    delete:
+      tags:
+      - Router
+      summary: Delete router
+      operationId: deleteRouter
+      parameters:
+      - $ref: '#/components/parameters/RouterId'
+      responses:
+        '204':
+          description: Router deleted
+  /v1/chat/completions:
+    post:
+      tags:
+      - Router
+      summary: Create chat completion (OpenAI-compatible)
+      description: Route chat completion requests via the LLM Router.
+      operationId: createChatCompletion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - model
+              - messages
+              properties:
+                model:
+                  type: string
+                messages:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      role:
+                        type: string
+                        enum:
+                        - system
+                        - user
+                        - assistant
+                      content:
+                        type: string
+                stream:
+                  type: boolean
+                temperature:
+                  type: number
+                max_tokens:
+                  type: integer
+      responses:
+        '200':
+          description: Chat completion response
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    Router:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        rules:
+          type: array
+          items:
+            type: object
+            properties:
+              model:
+                type: string
+              weight:
+                type: number
+              conditions:
+                type: object
+  parameters:
+    RouterId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Authentication uses HTTP Basic with the API key as the username
+
+        (password empty), encoded as: `Authorization: Basic base64(apiKey:)`.
+
+        Get an API key at https://platform.inworld.ai.
+
+        '

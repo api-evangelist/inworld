@@ -1,0 +1,70 @@
+openapi: 3.1.0
+info:
+  title: Inworld AI Models STT API
+  description: 'REST API for Inworld AI''s voice and conversational AI platform, covering
+
+    Text-to-Speech (synchronous and streaming), Speech-to-Text, voice
+
+    management, models, and the LLM Router that fronts 220+ third-party
+
+    models via the OpenAI-compatible chat completions endpoint.
+
+    '
+  version: '1.0'
+  contact:
+    name: Inworld AI
+    url: https://docs.inworld.ai
+servers:
+- url: https://api.inworld.ai
+  description: Production API
+security:
+- basicAuth: []
+tags:
+- name: STT
+  description: Speech-to-Text transcription
+paths:
+  /v1/stt/transcribe:
+    post:
+      tags:
+      - STT
+      summary: Transcribe audio
+      description: Transcribe audio to text with Inworld's Realtime STT API.
+      operationId: transcribeAudio
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                audioContent:
+                  type: string
+                  format: byte
+                  description: Base64-encoded audio bytes
+                language:
+                  type: string
+                  example: en-US
+      responses:
+        '200':
+          description: Transcription result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transcript:
+                    type: string
+                  language:
+                    type: string
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Authentication uses HTTP Basic with the API key as the username
+
+        (password empty), encoded as: `Authorization: Basic base64(apiKey:)`.
+
+        Get an API key at https://platform.inworld.ai.
+
+        '
