@@ -1,0 +1,41 @@
+generated: '2026-07-28'
+method: probed
+source: https://inworld.ai/.well-known/agent-card.json
+description: 'A2A Agent Card observed at /.well-known/agent-card.json on inworld.ai. Grade is measured
+  against the A2A 1.0.0 AgentCard object: ''conformant'' passes every structural check, ''near-conformant''
+  is correctly shaped but omits optional fields, ''flavored'' fails a hard check and is an agent card
+  in spirit rather than in schema. Provider-published by construction — served from the provider''s own
+  host; nothing here is derived or generated.'
+discovery:
+  path: /.well-known/agent-card.json
+  canonical: true
+  host: inworld.ai
+conformance:
+  spec: A2A 1.0.0
+  grade: flavored
+  protocol_version: null
+  preferred_transport: null
+  deviations:
+  - no-protocolVersion
+  - no-defaultInputModes
+  - no-defaultOutputModes
+  - no-preferredTransport
+card:
+  name: Inworld AI Realtime Voice Agent
+  description: Inworld AI is a research lab and inference provider focused on realtime AI models for consumer-facing
+    applications. We build voice AI that feels as human as it sounds. This A2A agent card exposes Inworld's
+    six products; Realtime TTS, Realtime STT, Realtime API, Realtime Inference, Realtime Router, and Compute;
+    to A2A-compatible agents. The voice that makes AI agents human. Realtime AI for consumer-facing applications.
+    Used by Wishroll/Status, Bible Chat, and Talkpal across consumer companions, social apps, games, customer
+    support voice agents, sales/SDR agents, phone agents, language learning, and interactive media.
+  url: https://api.inworld.ai
+  version: 1.0.0
+  documentation_url: https://docs.inworld.ai
+  skills: 6
+  file: inworld-agent-card.json
+x-evidence:
+  fetched: '2026-07-28'
+  url: https://inworld.ai/.well-known/agent-card.json
+  http_status: 200
+  content_type: application/json
+  note: Verbatim body saved alongside this manifest. No field inferred.

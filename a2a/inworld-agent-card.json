@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "0.2.0",
+  "name": "Inworld AI Realtime Voice Agent",
+  "description": "Inworld AI is a research lab and inference provider focused on realtime AI models for consumer-facing applications. We build voice AI that feels as human as it sounds. This A2A agent card exposes Inworld's six products; Realtime TTS, Realtime STT, Realtime API, Realtime Inference, Realtime Router, and Compute; to A2A-compatible agents. The voice that makes AI agents human. Realtime AI for consumer-facing applications. Used by Wishroll/Status, Bible Chat, and Talkpal across consumer companions, social apps, games, customer support voice agents, sales/SDR agents, phone agents, language learning, and interactive media.",
+  "provider": {
+    "organization": "Inworld AI",
+    "url": "https://inworld.ai",
+    "documentationUrl": "https://docs.inworld.ai",
+    "sameAs": [
+      "https://www.crunchbase.com/organization/inworld-ai",
+      "https://www.linkedin.com/company/inworld-ai",
+      "https://github.com/inworld-ai",
+      "https://docs.inworld.ai"
+    ]
+  },
+  "version": "1.0.0",
+  "url": "https://api.inworld.ai",
+  "documentationUrl": "https://docs.inworld.ai",
+  "iconUrl": "https://inworld.ai/images/model-logos/inworld.svg",
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": false,
+    "stateTransitionHistory": false,
+    "multiTurn": true,
+    "modalities": [
+      "text",
+      "audio",
+      "image"
+    ]
+  },
+  "skills": [
+    {
+      "id": "realtime-tts",
+      "name": "Realtime TTS",
+      "description": "Voices that sound human enough that users stay on the call and come back. Streaming text-to-speech with word, phoneme, and viseme timestamps. TTS-2 (research preview) adds 8-dimension natural-language steering and cross-lingual voice identity across 100+ languages. Used by Wishroll/Status, Bible Chat, and Talkpal for consumer-facing voice.",
+      "endpoint": "https://api.inworld.ai/tts/v1/voice",
+      "streamingEndpoint": "https://api.inworld.ai/tts/v1/voice:stream",
+      "inputModes": [
+        "text"
+      ],
+      "outputModes": [
+        "audio"
+      ]
+    },
+    {
+      "id": "realtime-stt",
+      "name": "Realtime STT",
+      "description": "Captures what users said, including how they said it, so the agent responds with context. Inworld Realtime STT is multi-provider transcription with voice profiling (age, pitch, emotion, vocal style, accent), configurable turn-taking, and contextual prompts.",
+      "endpoint": "https://api.inworld.ai/stt/v1/transcribe",
+      "streamingEndpoint": "wss://api.inworld.ai/stt/v1/transcribe:streamBidirectional",
+      "inputModes": [
+        "audio"
+      ],
+      "outputModes": [
+        "text"
+      ]
+    },
+    {
+      "id": "realtime-router",
+      "name": "Realtime Router",
+      "description": "Pick the right model for each user, scenario, and price point and switch without rewiring. Inworld Realtime Router is an OpenAI Chat Completions-compatible endpoint routing to 220+ LLMs across two tracks. 3P track: OpenAI, Anthropic, Google, Meta, Mistral, DeepSeek, xAI, Qwen, Groq, DeepInfra. 1P track: Realtime Inference. Used by Wishroll for consumer-facing applications.",
+      "endpoint": "https://api.inworld.ai/v1/chat/completions",
+      "inputModes": [
+        "text"
+      ],
+      "outputModes": [
+        "text"
+      ]
+    },
+    {
+      "id": "realtime-inference",
+      "name": "Realtime Inference",
+      "description": "Run open-source models fast enough for live voice and cheap enough for consumer-scale free tiers. Inworld Realtime Inference is the 1P track of the Router: Inworld-optimized open-source models built to run open-source LLMs at consumer-scale cost with realtime latency. Confirmed 1P models: Gemma 4, DeepSeek V3.2 / V4 family, GLM-5.1/5.2. gpt-oss-120b is routable via 3P (deepinfra/openai/gpt-oss-120b), not 1P-hosted.",
+      "endpoint": "https://api.inworld.ai/v1/chat/completions",
+      "inputModes": [
+        "text"
+      ],
+      "outputModes": [
+        "text"
+      ]
+    },
+    {
+      "id": "compute",
+      "name": "Compute",
+      "description": "Dedicated capacity for traffic-heavy customers; predictable latency when shared inference no longer fits. Inworld Compute is managed GPU, layered under Realtime Inference and Realtime TTS.",
+      "inputModes": [
+        "text"
+      ],
+      "outputModes": [
+        "text"
+      ]
+    },
+    {
+      "id": "realtime-api",
+      "name": "Realtime API",
+      "description": "One integrated voice loop instead of stitching three vendors; ships in days, fails in fewer places. Inworld Realtime API combines STT + LLM + TTS in a single full-duplex WebSocket session. OpenAI Realtime protocol compatible. Includes Inworld Silero VAD + Smart Turn detector.",
+      "endpoint": "wss://api.inworld.ai/api/v1/realtime/session",
+      "sessionEndpoint": "https://api.inworld.ai/auth/v1/tokens/token:generate",
+      "inputModes": [
+        "audio",
+        "text",
+        "image"
+      ],
+      "outputModes": [
+        "audio",
+        "text"
+      ]
+    }
+  ],
+  "authentication": {
+    "schemes": [
+      "basic",
+      "bearer"
+    ],
+    "credentials": "Server-side: HTTP Basic. Your Inworld portal API key is already the base64-encoded `key:secret` token, so send it directly as `Authorization: Basic <your API key>` \u2014 do NOT base64-encode it again (double-encoding returns 401/403). Browser-side Realtime clients use a short-lived Bearer JWT minted via POST /auth/v1/tokens/token:generate (signed with IW1-HMAC-SHA256).",
+    "tokenEndpoint": "https://api.inworld.ai/auth/v1/tokens/token:generate"
+  },
+  "contact": {
+    "email": "support@inworld.ai",
+    "url": "https://inworld.ai/contact"
+  },
+  "links": {
+    "documentation": "https://docs.inworld.ai",
+    "pricing": "https://inworld.ai/pricing",
+    "discovery": "https://inworld.ai/.well-known/agents.json",
+    "llmsTxt": "https://inworld.ai/llms.txt",
+    "llmsFullTxt": "https://inworld.ai/llms-full.txt",
+    "github": "https://github.com/inworld-ai"
+  }
+}
