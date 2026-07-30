@@ -17,65 +17,122 @@ created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-  - aid: inworld:tts
-    name: Inworld Text-to-Speech API
-    description: >-
-      TTS-2 and TTS-1.5 (Max/Mini) models for character voice synthesis. Priced per 1M
-      characters with plan-tier discounts.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.inworld.ai/docs/tts
-    baseURL: https://api.inworld.ai
-    tags:
-      - TTS
-      - Speech Synthesis
-      - Character Voice
-    properties:
-      - type: Documentation
-        url: https://docs.inworld.ai/docs/tts
-      - type: Pricing
-        url: https://inworld.ai/pricing
-  - aid: inworld:stt
-    name: Inworld Speech-to-Text API
-    description: >-
-      Multi-provider transcription API priced at $0.35/hour standard rate.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.inworld.ai/docs/stt
-    baseURL: https://api.inworld.ai
-    tags:
-      - STT
-      - Transcription
-    properties:
-      - type: Documentation
-        url: https://docs.inworld.ai/docs/stt
-  - aid: inworld:realtime
-    name: Inworld Realtime API
-    description: >-
-      Low-latency speech-to-speech voice API for natural conversation experiences. Included
-      with all plans.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.inworld.ai/docs/realtime
-    baseURL: https://api.inworld.ai
-    tags:
-      - Realtime
-      - Speech-to-Speech
-      - Voice
-    properties:
-      - type: Documentation
-        url: https://docs.inworld.ai/docs/realtime
-  - aid: inworld:llm-router
-    name: Inworld LLM Router API
-    description: >-
-      Routing layer over 220+ LLM models, billed at provider cost via Inworld's unified API.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.inworld.ai/docs/llm-router
-    baseURL: https://api.inworld.ai
-    tags:
-      - LLM
-      - Router
-      - Inference
-    properties:
-      - type: Documentation
-        url: https://docs.inworld.ai/docs/llm-router
+- aid: inworld:tts
+  name: Inworld Text-to-Speech API
+  description: >-
+    TTS-2 and TTS-1.5 (Max/Mini) models for character voice synthesis. Priced per 1M characters with plan-tier
+    discounts.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.inworld.ai/docs/tts
+  baseURL: https://api.inworld.ai
+  tags:
+  - TTS
+  - Speech Synthesis
+  - Character Voice
+  properties:
+  - type: Documentation
+    url: https://docs.inworld.ai/docs/tts
+  - type: Pricing
+    url: https://inworld.ai/pricing
+- aid: inworld:stt
+  name: Inworld Speech-to-Text API
+  description: Multi-provider transcription API priced at $0.35/hour standard rate.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.inworld.ai/docs/stt
+  baseURL: https://api.inworld.ai
+  tags:
+  - STT
+  - Transcription
+  properties:
+  - type: Documentation
+    url: https://docs.inworld.ai/docs/stt
+- aid: inworld:realtime
+  name: Inworld Realtime API
+  description: >-
+    Low-latency speech-to-speech voice API for natural conversation experiences. Included with all plans.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.inworld.ai/docs/realtime
+  baseURL: https://api.inworld.ai
+  tags:
+  - Realtime
+  - Speech-to-Speech
+  - Voice
+  properties:
+  - type: Documentation
+    url: https://docs.inworld.ai/docs/realtime
+- aid: inworld:llm-router
+  name: Inworld LLM Router API
+  description: Routing layer over 220+ LLM models, billed at provider cost via Inworld's unified API.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.inworld.ai/docs/llm-router
+  baseURL: https://api.inworld.ai
+  tags:
+  - LLM
+  - Router
+  - Inference
+  properties:
+  - type: Documentation
+    url: https://docs.inworld.ai/docs/llm-router
+- aid: inworld:inworld-models-api
+  name: Inworld AI Models API
+  description: Available models
+  humanURL: https://docs.inworld.ai/docs/tts
+  baseURL: https://api.inworld.ai
+  tags:
+  - Models
+  properties:
+  - type: OpenAPI
+    url: openapi/inworld-models-api-openapi.yml
+- aid: inworld:inworld-realtime-api
+  name: Inworld AI Realtime API
+  description: Realtime speech-to-speech
+  humanURL: https://docs.inworld.ai/docs/tts
+  baseURL: https://api.inworld.ai
+  tags:
+  - Realtime
+  properties:
+  - type: OpenAPI
+    url: openapi/inworld-realtime-api-openapi.yml
+- aid: inworld:inworld-router-api
+  name: Inworld AI Router API
+  description: LLM Router configurations
+  humanURL: https://docs.inworld.ai/docs/tts
+  baseURL: https://api.inworld.ai
+  tags:
+  - Router
+  properties:
+  - type: OpenAPI
+    url: openapi/inworld-router-api-openapi.yml
+- aid: inworld:inworld-stt-api
+  name: Inworld AI STT API
+  description: Speech-to-Text transcription
+  humanURL: https://docs.inworld.ai/docs/tts
+  baseURL: https://api.inworld.ai
+  tags:
+  - STT
+  properties:
+  - type: OpenAPI
+    url: openapi/inworld-stt-api-openapi.yml
+- aid: inworld:inworld-tts-api
+  name: Inworld AI TTS API
+  description: Text-to-Speech synthesis
+  humanURL: https://docs.inworld.ai/docs/tts
+  baseURL: https://api.inworld.ai
+  tags:
+  - TTS
+  properties:
+  - type: OpenAPI
+    url: openapi/inworld-tts-api-openapi.yml
+- aid: inworld:inworld-voices-api
+  name: Inworld AI Voices API
+  description: Voice catalog and custom voice management
+  humanURL: https://docs.inworld.ai/docs/tts
+  baseURL: https://api.inworld.ai
+  tags:
+  - Voices
+  properties:
+  - type: OpenAPI
+    url: openapi/inworld-voices-api-openapi.yml
 common:
   - type: AgentCard
     url: a2a/inworld-a2a.yml
