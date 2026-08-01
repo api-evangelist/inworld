@@ -1,0 +1,24 @@
+{
+  "provider": "inworld",
+  "sources": [
+    "inworld-models-api-openapi.yml",
+    "inworld-realtime-api-openapi.yml",
+    "inworld-router-api-openapi.yml",
+    "inworld-stt-api-openapi.yml",
+    "inworld-tts-api-openapi.yml",
+    "inworld-voices-api-openapi.yml"
+  ],
+  "outputs": [
+    "inworld-models-api-openapi.yml",
+    "inworld-realtime-api-openapi.yml",
+    "inworld-router-api-openapi.yml",
+    "inworld-stt-api-openapi.yml",
+    "inworld-tts-api-openapi.yml",
+    "inworld-voices-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
