@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Inworld AI Models STT API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "STT",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Transcribe audio",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.inworld.ai/v1/stt/transcribe",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Transcribe audio to text with Inworld's Realtime STT API."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

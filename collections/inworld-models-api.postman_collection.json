@@ -1,0 +1,122 @@
+{
+  "item": [
+    {
+      "id": "2fd48773-5d85-4f32-b3f6-ae9f082e0ff3",
+      "name": "Models",
+      "description": {
+        "content": "Available models",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "23a2f395-1176-4504-ad1d-298e517da598",
+          "name": "List available models",
+          "request": {
+            "name": "List available models",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2a63b621-9f77-43e6-b4ee-c6fd3099b977",
+              "name": "List of models",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"provider\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"provider\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.inworld.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a651aaec-d479-4fdb-bcc9-269a813ad041",
+    "name": "Inworld AI Models API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Inworld AI's voice and conversational AI platform, covering\nText-to-Speech (synchronous and streaming), Speech-to-Text, voice\nmanagement, models, and the LLM Router that fronts 220+ third-party\nmodels via the OpenAI-compatible chat completions endpoint.\n\n\nContact Support:\n Name: Inworld AI",
+      "type": "text/plain"
+    }
+  }
+}

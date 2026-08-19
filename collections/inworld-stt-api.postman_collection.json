@@ -1,0 +1,148 @@
+{
+  "item": [
+    {
+      "id": "8999a42b-db75-407d-9b45-f61f27596d91",
+      "name": "STT",
+      "description": {
+        "content": "Speech-to-Text transcription",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "15205c0b-0cb5-45e9-a9fa-3e180f586e5d",
+          "name": "Transcribe audio",
+          "request": {
+            "name": "Transcribe audio",
+            "description": {
+              "content": "Transcribe audio to text with Inworld's Realtime STT API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "stt",
+                "transcribe"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"audioContent\": \"<byte>\",\n  \"language\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9f320668-c016-42d2-9bff-85717dd02ae5",
+              "name": "Transcription result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "stt",
+                    "transcribe"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"audioContent\": \"<byte>\",\n  \"language\": \"en-US\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transcript\": \"string\",\n  \"language\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.inworld.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5a932725-701b-48a3-b644-c8ddb0ffc12c",
+    "name": "Inworld AI Models STT API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Inworld AI's voice and conversational AI platform, covering\nText-to-Speech (synchronous and streaming), Speech-to-Text, voice\nmanagement, models, and the LLM Router that fronts 220+ third-party\nmodels via the OpenAI-compatible chat completions endpoint.\n\n\nContact Support:\n Name: Inworld AI",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,619 @@
+{
+  "item": [
+    {
+      "id": "732ead2b-c226-40ac-97bf-2ce8efe8b65f",
+      "name": "Router",
+      "description": {
+        "content": "LLM Router configurations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1ecb69f2-4d56-414a-a843-d867de6c160b",
+          "name": "List routers",
+          "request": {
+            "name": "List routers",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "routers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c59341d5-e7ec-4e42-a6f2-c08599271d7b",
+              "name": "List of router configurations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "routers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"routers\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"rules\": [\n        {\n          \"model\": \"string\",\n          \"weight\": 5617.455270082412,\n          \"conditions\": {}\n        },\n        {\n          \"model\": \"string\",\n          \"weight\": 3096.2795802718547,\n          \"conditions\": {}\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"rules\": [\n        {\n          \"model\": \"string\",\n          \"weight\": 853.3162513553006,\n          \"conditions\": {}\n        },\n        {\n          \"model\": \"string\",\n          \"weight\": 7780.611838423361,\n          \"conditions\": {}\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "91632001-e629-4d4d-98d1-80853c2ab9d4",
+          "name": "Create router",
+          "request": {
+            "name": "Create router",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "routers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    },\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6321c8b9-a43d-4a12-a2b6-c1c2f5ce3e85",
+              "name": "Router created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "routers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    },\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"rules\": [\n    {\n      \"model\": \"string\",\n      \"weight\": 6594.742412524855,\n      \"conditions\": {}\n    },\n    {\n      \"model\": \"string\",\n      \"weight\": 7738.74247999719,\n      \"conditions\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3188d5f8-1389-4a4f-9b05-747ead8957bc",
+          "name": "Get router",
+          "request": {
+            "name": "Get router",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "routers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "365c1cb3-c2a3-41f8-abda-241ca3744c54",
+              "name": "Router configuration",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "routers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"rules\": [\n    {\n      \"model\": \"string\",\n      \"weight\": 6594.742412524855,\n      \"conditions\": {}\n    },\n    {\n      \"model\": \"string\",\n      \"weight\": 7738.74247999719,\n      \"conditions\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e40f116f-1e3d-48db-8fcf-ef0750dd15fa",
+          "name": "Update router",
+          "request": {
+            "name": "Update router",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "routers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    },\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b895e742-8945-49b5-a40b-57d2be3c20d9",
+              "name": "Updated router",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "routers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    },\n    {\n      \"model\": \"<string>\",\n      \"weight\": \"<number>\",\n      \"conditions\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"rules\": [\n    {\n      \"model\": \"string\",\n      \"weight\": 6594.742412524855,\n      \"conditions\": {}\n    },\n    {\n      \"model\": \"string\",\n      \"weight\": 7738.74247999719,\n      \"conditions\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57a9f3c2-2d96-4d5c-8af0-5a72ed07a08f",
+          "name": "Delete router",
+          "request": {
+            "name": "Delete router",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "routers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "533aa748-08af-4020-93f6-c68d849ec31b",
+              "name": "Router deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "routers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71f7edab-3769-439d-bed6-9acd5d1cb8a1",
+          "name": "Create chat completion (OpenAI-compatible)",
+          "request": {
+            "name": "Create chat completion (OpenAI-compatible)",
+            "description": {
+              "content": "Route chat completion requests via the LLM Router.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"stream\": \"<boolean>\",\n  \"temperature\": \"<number>\",\n  \"max_tokens\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "23f0bcef-5a30-4d95-9bd0-2da91d379516",
+              "name": "Chat completion response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"stream\": \"<boolean>\",\n  \"temperature\": \"<number>\",\n  \"max_tokens\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.inworld.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "74479812-3c43-4e45-b8ec-3c24fd9ade24",
+    "name": "Inworld AI Models Router API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Inworld AI's voice and conversational AI platform, covering\nText-to-Speech (synchronous and streaming), Speech-to-Text, voice\nmanagement, models, and the LLM Router that fronts 220+ third-party\nmodels via the OpenAI-compatible chat completions endpoint.\n\n\nContact Support:\n Name: Inworld AI",
+      "type": "text/plain"
+    }
+  }
+}

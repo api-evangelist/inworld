@@ -1,0 +1,150 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Inworld AI Models Voices API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Voices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available TTS voices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.inworld.ai/v1/tts/voices"
+          },
+          "docs": "List available TTS voices"
+        },
+        {
+          "info": {
+            "name": "List voices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.inworld.ai/v1/voices"
+          },
+          "docs": "List voices"
+        },
+        {
+          "info": {
+            "name": "Get voice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.inworld.ai/v1/voices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get voice"
+        },
+        {
+          "info": {
+            "name": "Update voice",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.inworld.ai/v1/voices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update voice"
+        },
+        {
+          "info": {
+            "name": "Delete voice",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.inworld.ai/v1/voices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete voice"
+        },
+        {
+          "info": {
+            "name": "Clone voice from audio",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.inworld.ai/v1/voices/clone",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Clone voice from audio"
+        },
+        {
+          "info": {
+            "name": "Design voice from text description",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.inworld.ai/v1/voices/design",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Design voice from text description"
+        },
+        {
+          "info": {
+            "name": "Publish a voice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.inworld.ai/v1/voices/publish",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publish a voice"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

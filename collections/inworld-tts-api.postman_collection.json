@@ -1,0 +1,436 @@
+{
+  "item": [
+    {
+      "id": "6707811c-6d0e-4708-9786-a564f7e5e0b4",
+      "name": "TTS",
+      "description": {
+        "content": "Text-to-Speech synthesis",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3034dea4-c89b-49ed-b6ae-0bde38656460",
+          "name": "Synthesize speech",
+          "request": {
+            "name": "Synthesize speech",
+            "description": {
+              "content": "Send text to the TTS REST API and receive a complete audio file in one response.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "tts",
+                "synthesize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"<string>\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"<string>\",\n    \"sampleRateHertz\": \"<integer>\",\n    \"speakingRate\": \"<number>\",\n    \"bitRate\": 128000\n  },\n  \"language\": \"<string>\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "65b42b24-4afd-4570-8f3e-6a33a9aba0a0",
+              "name": "Synthesized audio",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tts",
+                    "synthesize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"inworld-tts-2\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"WAV\",\n    \"sampleRateHertz\": 29717,\n    \"speakingRate\": 0.9601086633428758,\n    \"bitRate\": 128000\n  },\n  \"language\": \"en-US\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"audioContent\": \"string\",\n  \"usage\": {\n    \"characterCount\": 1894,\n    \"modelId\": \"string\"\n  },\n  \"timestampInfo\": [\n    {\n      \"text\": \"string\",\n      \"startSeconds\": 6781.762587893479,\n      \"endSeconds\": 324.06422586676473,\n      \"phonemes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"text\": \"string\",\n      \"startSeconds\": 813.7435653163805,\n      \"endSeconds\": 7428.710927625711,\n      \"phonemes\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8a36b5e-9339-49e9-ba9d-2e4b4215d56f",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tts",
+                    "synthesize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"inworld-tts-2\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"WAV\",\n    \"sampleRateHertz\": 29717,\n    \"speakingRate\": 0.9601086633428758,\n    \"bitRate\": 128000\n  },\n  \"language\": \"en-US\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 6551,\n  \"message\": \"string\",\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f4af5b97-9b62-455d-bccd-a294cc9fdf2c",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tts",
+                    "synthesize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"inworld-tts-2\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"WAV\",\n    \"sampleRateHertz\": 29717,\n    \"speakingRate\": 0.9601086633428758,\n    \"bitRate\": 128000\n  },\n  \"language\": \"en-US\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 6551,\n  \"message\": \"string\",\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8791ba95-cc15-4bd5-aa72-4feeb741f553",
+          "name": "Synthesize speech (streaming)",
+          "request": {
+            "name": "Synthesize speech (streaming)",
+            "description": {
+              "content": "Stream synthesized audio chunks over HTTP as they are processed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "tts",
+                "synthesize:stream"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/x-ndjson"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"<string>\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"<string>\",\n    \"sampleRateHertz\": \"<integer>\",\n    \"speakingRate\": \"<number>\",\n    \"bitRate\": 128000\n  },\n  \"language\": \"<string>\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f16d10ca-78e9-467d-8db3-92753f6b37bd",
+              "name": "Streamed audio chunks (newline-delimited JSON)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tts",
+                    "synthesize:stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/x-ndjson"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"modelId\": \"inworld-tts-2\",\n  \"audioConfig\": {\n    \"audioEncoding\": \"WAV\",\n    \"sampleRateHertz\": 29717,\n    \"speakingRate\": 0.9601086633428758,\n    \"bitRate\": 128000\n  },\n  \"language\": \"en-US\",\n  \"deliveryMode\": \"<string>\",\n  \"timestampType\": \"<string>\",\n  \"applyTextNormalization\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-ndjson"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2388def3-a807-41ea-931f-67045898f5cb",
+          "name": "List available TTS voices",
+          "request": {
+            "name": "List available TTS voices",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "tts",
+                "voices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8a01fbaf-785a-452f-8687-dae232a152ea",
+              "name": "A list of TTS voices",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tts",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"voices\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"language\": \"string\",\n      \"gender\": \"string\",\n      \"description\": \"string\",\n      \"previewUrl\": \"http://iT.lfwwrngfje\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"language\": \"string\",\n      \"gender\": \"string\",\n      \"description\": \"string\",\n      \"previewUrl\": \"http://XKAsYYkLKCwhBsjJQjCxswtkYptl.gshjoQRhcJ6KH6xXZbjg5IepDw\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.inworld.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ae09e92d-cad6-4696-8755-923a730e7cdb",
+    "name": "Inworld AI Models TTS API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Inworld AI's voice and conversational AI platform, covering\nText-to-Speech (synchronous and streaming), Speech-to-Text, voice\nmanagement, models, and the LLM Router that fronts 220+ third-party\nmodels via the OpenAI-compatible chat completions endpoint.\n\n\nContact Support:\n Name: Inworld AI",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Inworld AI Models Router API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Router",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List routers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.inworld.ai/v1/routers"
+          },
+          "docs": "List routers"
+        },
+        {
+          "info": {
+            "name": "Create router",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.inworld.ai/v1/routers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create router"
+        },
+        {
+          "info": {
+            "name": "Get router",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.inworld.ai/v1/routers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get router"
+        },
+        {
+          "info": {
+            "name": "Update router",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.inworld.ai/v1/routers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update router"
+        },
+        {
+          "info": {
+            "name": "Delete router",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.inworld.ai/v1/routers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete router"
+        },
+        {
+          "info": {
+            "name": "Create chat completion (OpenAI-compatible)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.inworld.ai/v1/chat/completions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Route chat completion requests via the LLM Router."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

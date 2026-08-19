@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Inworld AI Models Realtime API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Realtime",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create WebRTC connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.inworld.ai/v1/realtime/webrtc",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a WebRTC session for realtime voice agent interaction."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

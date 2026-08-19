@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Inworld AI Models TTS API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TTS",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Synthesize speech",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.inworld.ai/v1/tts/synthesize",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send text to the TTS REST API and receive a complete audio file in one response."
+        },
+        {
+          "info": {
+            "name": "Synthesize speech (streaming)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.inworld.ai/v1/tts/synthesize:stream",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Stream synthesized audio chunks over HTTP as they are processed."
+        },
+        {
+          "info": {
+            "name": "List available TTS voices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.inworld.ai/v1/tts/voices"
+          },
+          "docs": "List available TTS voices"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
