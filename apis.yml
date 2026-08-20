@@ -8,6 +8,12 @@ description: >-
   and an LLM Router that fronts 220+ third-party models with unified billing.
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
+  - Artificial Intelligence
+  - Voice
+  - Characters
+  - Games
+  - Conversational
+tags_raw:
   - AI
   - Voice
   - Characters
@@ -54,6 +60,10 @@ apis:
   humanURL: https://docs.inworld.ai/docs/realtime
   baseURL: https://api.inworld.ai
   tags:
+  - Real-Time
+  - Speech to Speech
+  - Voice
+  tags_raw:
   - Realtime
   - Speech-to-Speech
   - Voice
@@ -89,6 +99,8 @@ apis:
   humanURL: https://docs.inworld.ai/docs/tts
   baseURL: https://api.inworld.ai
   tags:
+  - Real-Time
+  tags_raw:
   - Realtime
   properties:
   - type: OpenAPI
