@@ -73,7 +73,7 @@ apis:
   baseURL: https://api.inworld.ai
   tags:
   - Real-Time
-  - Speech to Speech
+  - Speech-to-Speech
   - Voice
   tags_raw:
   - Realtime
