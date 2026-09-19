@@ -167,6 +167,8 @@ apis:
   humanURL: https://docs.inworld.ai/docs/tts
   baseURL: https://api.inworld.ai
   tags:
+  - Voice
+  tags_raw:
   - Voices
   properties:
   - type: OpenAPI
