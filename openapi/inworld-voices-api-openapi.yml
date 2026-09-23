@@ -1,15 +1,13 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Inworld AI Models Voices API
+  title: Inworld AI Voices API
   description: 'REST API for Inworld AI''s voice and conversational AI platform, covering
 
     Text-to-Speech (synchronous and streaming), Speech-to-Text, voice
 
     management, models, and the LLM Router that fronts 220+ third-party
 
-    models via the OpenAI-compatible chat completions endpoint.
-
-    '
+    models via the OpenAI-compatible chat completions endpoint.'
   version: '1.0'
   contact:
     name: Inworld AI
@@ -171,13 +169,6 @@ paths:
         '200':
           description: Voice published
 components:
-  parameters:
-    VoiceId:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
   schemas:
     Voice:
       type: object
@@ -195,6 +186,13 @@ components:
         previewUrl:
           type: string
           format: uri
+  parameters:
+    VoiceId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
   securitySchemes:
     basicAuth:
       type: http

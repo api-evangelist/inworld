@@ -1,12 +1,7 @@
 {
   "provider": "inworld",
   "sources": [
-    "inworld-models-api-openapi.yml",
-    "inworld-realtime-api-openapi.yml",
-    "inworld-router-api-openapi.yml",
-    "inworld-stt-api-openapi.yml",
-    "inworld-tts-api-openapi.yml",
-    "inworld-voices-api-openapi.yml"
+    "_original/inworld-openapi.yml"
   ],
   "outputs": [
     "inworld-models-api-openapi.yml",
@@ -19,6 +14,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "inworld-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "inworld-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "inworld-realtime-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "inworld-router-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "inworld-stt-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "inworld-tts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "inworld-voices-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
