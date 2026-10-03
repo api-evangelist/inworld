@@ -84,19 +84,6 @@ paths:
                     items:
                       $ref: '#/components/schemas/Voice'
 components:
-  responses:
-    BadRequest:
-      description: Invalid request
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid API key
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
     Error:
       type: object
@@ -107,76 +94,6 @@ components:
           type: string
         status:
           type: string
-    SynthesizeResponse:
-      type: object
-      properties:
-        audioContent:
-          type: string
-          format: byte
-          description: Base64-encoded audio bytes in the requested format.
-        usage:
-          type: object
-          properties:
-            characterCount:
-              type: integer
-            modelId:
-              type: string
-        timestampInfo:
-          type: array
-          items:
-            type: object
-            properties:
-              text:
-                type: string
-              startSeconds:
-                type: number
-              endSeconds:
-                type: number
-              phonemes:
-                type: array
-                items:
-                  type: string
-    SynthesizeRequest:
-      type: object
-      required:
-      - text
-      - voiceId
-      - modelId
-      properties:
-        text:
-          type: string
-          maxLength: 2000
-          description: Input string to convert to speech.
-        voiceId:
-          type: string
-          description: Identifier for the desired voice.
-        modelId:
-          type: string
-          example: inworld-tts-2
-          description: TTS model selection (e.g., inworld-tts-2, inworld-tts-1.5-mini).
-        audioConfig:
-          $ref: '#/components/schemas/AudioConfig'
-        language:
-          type: string
-          example: en-US
-          description: BCP-47 language tag.
-        deliveryMode:
-          type: string
-          enum:
-          - STABLE
-          - BALANCED
-          - CREATIVE
-          description: Output variation control (TTS-2 only).
-        timestampType:
-          type: string
-          enum:
-          - WORD
-          - CHARACTER
-        applyTextNormalization:
-          type: string
-          enum:
-          - true
-          - false
     AudioConfig:
       type: object
       properties:
@@ -218,6 +135,89 @@ components:
         previewUrl:
           type: string
           format: uri
+    SynthesizeRequest:
+      type: object
+      required:
+      - text
+      - voiceId
+      - modelId
+      properties:
+        text:
+          type: string
+          maxLength: 2000
+          description: Input string to convert to speech.
+        voiceId:
+          type: string
+          description: Identifier for the desired voice.
+        modelId:
+          type: string
+          example: inworld-tts-2
+          description: TTS model selection (e.g., inworld-tts-2, inworld-tts-1.5-mini).
+        audioConfig:
+          $ref: '#/components/schemas/AudioConfig'
+        language:
+          type: string
+          example: en-US
+          description: BCP-47 language tag.
+        deliveryMode:
+          type: string
+          enum:
+          - STABLE
+          - BALANCED
+          - CREATIVE
+          description: Output variation control (TTS-2 only).
+        timestampType:
+          type: string
+          enum:
+          - WORD
+          - CHARACTER
+        applyTextNormalization:
+          type: string
+          enum:
+          - 'ON'
+          - 'OFF'
+    SynthesizeResponse:
+      type: object
+      properties:
+        audioContent:
+          type: string
+          format: byte
+          description: Base64-encoded audio bytes in the requested format.
+        usage:
+          type: object
+          properties:
+            characterCount:
+              type: integer
+            modelId:
+              type: string
+        timestampInfo:
+          type: array
+          items:
+            type: object
+            properties:
+              text:
+                type: string
+              startSeconds:
+                type: number
+              endSeconds:
+                type: number
+              phonemes:
+                type: array
+                items:
+                  type: string
+  responses:
+    BadRequest:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid API key
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     basicAuth:
       type: http
