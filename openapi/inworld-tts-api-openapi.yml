@@ -85,40 +85,6 @@ paths:
                       $ref: '#/components/schemas/Voice'
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-        message:
-          type: string
-        status:
-          type: string
-    AudioConfig:
-      type: object
-      properties:
-        audioEncoding:
-          type: string
-          enum:
-          - LINEAR16
-          - MP3
-          - OGG_OPUS
-          - ALAW
-          - MULAW
-          - FLAC
-          - PCM
-          - WAV
-        sampleRateHertz:
-          type: integer
-          minimum: 8000
-          maximum: 48000
-        speakingRate:
-          type: number
-          minimum: 0.5
-          maximum: 1.5
-        bitRate:
-          type: integer
-          default: 128000
     Voice:
       type: object
       properties:
@@ -176,6 +142,40 @@ components:
           enum:
           - 'ON'
           - 'OFF'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        status:
+          type: string
+    AudioConfig:
+      type: object
+      properties:
+        audioEncoding:
+          type: string
+          enum:
+          - LINEAR16
+          - MP3
+          - OGG_OPUS
+          - ALAW
+          - MULAW
+          - FLAC
+          - PCM
+          - WAV
+        sampleRateHertz:
+          type: integer
+          minimum: 8000
+          maximum: 48000
+        speakingRate:
+          type: number
+          minimum: 0.5
+          maximum: 1.5
+        bitRate:
+          type: integer
+          default: 128000
     SynthesizeResponse:
       type: object
       properties:
@@ -206,14 +206,14 @@ components:
                 items:
                   type: string
   responses:
-    BadRequest:
-      description: Invalid request
+    Unauthorized:
+      description: Missing or invalid API key
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid API key
+    BadRequest:
+      description: Invalid request
       content:
         application/json:
           schema:
