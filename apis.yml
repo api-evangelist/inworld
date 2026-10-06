@@ -48,7 +48,7 @@ tags_raw:
   - Conversational
   - A2A
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: inworld:tts
@@ -176,6 +176,10 @@ apis:
   - type: OpenAPI
     url: openapi/inworld-voices-api-openapi.yml
 common:
+  - url: https://inworld.ai/blog
+    type: Blog
+  - url: https://inworld.ai/blog/rss.xml
+    type: BlogRSS
   - type: AgentCard
     url: a2a/inworld-a2a.yml
     name: A2A Agent Card
