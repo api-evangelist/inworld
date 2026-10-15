@@ -14,7 +14,7 @@ edges:
     value: OpenAI-compatible
     note: 'inworld declares OpenAI compatibility: ''models via the OpenAI-compatible chat completions endpoint.'''''
     detected_by: sweep-model-routing.py
-    detected: '2026-10-13'
+    detected: '2026-10-15'
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
 - partner_name: Pipecat
@@ -57,8 +57,44 @@ edges:
   matched_by: verified-domain-table
   detected_by: sweep-voice-ai.py
   first_seen: '2026-10-15'
+- partner_name: A2A protocol (own Agent Card)
+  partner: null
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: A2A agent
+  evidence: https://inworld.ai/.well-known/agent-card.json
+  channel: provider-built
+  relationship: compatible
+  shape: a2a
+  evidence_kind: own-wellknown
+  degree: flavored
+  report_only: true
+  a2a_card:
+    grade: flavored
+    verdict: flavored
+    protocol_version: null
+    deviations:
+    - no-protocolVersion
+    card_subject: api
+  contract_reference:
+    register: provider's own /.well-known/agent-card.json
+    spec_file: null
+    standard: A2A
+    role: a2a-agent-card
+    registered_name: Inworld AI
+    organization: Inworld AI
+    matched_domain: inworld.ai
+    matched_by: own-domain
+    detected_by: sweep-ai-agents.py
+    detected: '2026-10-15'
+  detected_by: sweep-ai-agents.py
+  first_seen: '2026-10-15'
 generated: '2026-10-13'
 method: searched
 checked:
+- https://a2aregistry.org/api/agents
 - https://github.com/livekit/agents/tree/main/livekit-plugins
 - https://github.com/pipecat-ai/pipecat/tree/main/src/pipecat/services
+source:
+- https://a2aregistry.org/api/agents
