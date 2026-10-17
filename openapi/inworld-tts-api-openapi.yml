@@ -85,22 +85,6 @@ paths:
                       $ref: '#/components/schemas/Voice'
 components:
   schemas:
-    Voice:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        language:
-          type: string
-        gender:
-          type: string
-        description:
-          type: string
-        previewUrl:
-          type: string
-          format: uri
     SynthesizeRequest:
       type: object
       required:
@@ -142,15 +126,6 @@ components:
           enum:
           - 'ON'
           - 'OFF'
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-        message:
-          type: string
-        status:
-          type: string
     AudioConfig:
       type: object
       properties:
@@ -176,6 +151,22 @@ components:
         bitRate:
           type: integer
           default: 128000
+    Voice:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        language:
+          type: string
+        gender:
+          type: string
+        description:
+          type: string
+        previewUrl:
+          type: string
+          format: uri
     SynthesizeResponse:
       type: object
       properties:
@@ -205,15 +196,24 @@ components:
                 type: array
                 items:
                   type: string
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        status:
+          type: string
   responses:
-    Unauthorized:
-      description: Missing or invalid API key
+    BadRequest:
+      description: Invalid request
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Invalid request
+    Unauthorized:
+      description: Missing or invalid API key
       content:
         application/json:
           schema:
